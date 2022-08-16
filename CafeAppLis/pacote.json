@@ -1,0 +1,9 @@
+{
+    "name" : " BootstrapApp " ,
+    "versão" : " 1 " ,
+    "main" : " index.js " ,
+    "licença" : " MIT " ,
+    "dependências" : {
+      "bootstrap" : " ^5.1.0 "
+    }
+  }

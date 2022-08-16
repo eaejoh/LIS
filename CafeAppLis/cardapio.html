@@ -1,0 +1,134 @@
+<!DOCTYPE html><!--Diz que o tipo do documento é html-->
+<html><!--É o arquivo html em si-->
+
+<head><!--É onde fica as "configurações" da página html-->
+  <meta charset="UTF-8"><!--faz com que aceite qualquer caracter diferente-->
+  <title>Cardápio</title><!--Título da página-->
+
+  <!-- Bootstrap - CSS -->
+  <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"><!--o link serve para "linkar" algum arquvio de fora da máquina ou de dentro da máquina, que é o caso. Nesse link que ele estar puxando é o css do Bootstrap. E o href é o caminho para fazer o link -->
+
+</head>
+
+<body><!--É onde fica as informações "visíveis" ao cliente-->
+  <header><!--Aqui é o cabeçalho da página geralmente é usado para criar menu inicial, barra de pesquisa e etc-->
+    
+    <!-- Toolbar -->
+
+    <!--O <nav> que começa da linha 19 e termina na linha 44 tem o objetivo de criar um "Menu inicial"-->
+    
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary"><!--Serve para representar uma página e que vai direcionar para outras páginas.E o class serve para criar uma classe de elementos que pode ser de 1 ou mais elemento e esse class do arquivo cardapio.html estão atribuido com Bootstrap exceto um indicado como navbar-brand -->
+      
+      <div class="container-fluid"><!--cria uma "caixa vazia" que se pode colocar elementos dentro delas-->
+        <a class="navbar-brand" href="#"><!--O elemento <a> ele cria um link clicável para o cliente na página html. Esse class em específiconão não é utilizado no Boostrap mas esta sendo usado na pasta css no arquivo index.css-->
+          Coffee
+          <small>Arábica</small><!--deixa a letra pequena-->
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><!--cria um botão e este botão esta com uma série de atribuições do Bootstrap-->
+          <span class="navbar-toggler-icon"></span><!--É um conteiner generico em linha normalmente utilizado para dar class, id, atributos e etc-->
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav"><!--id são usado para da uma característica especifica para algum elemento devendo ser usado apenas em um elemento-->
+          <ul class="navbar-nav"><!--Cria uma lista desordenada-->
+            <li class="nav-item"><!--Cria os elementows da lista-->
+              <a class="nav-link" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Cardápio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sobre</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+  <main><!--Esse é o corpo da página html onde coloca a maioria dos elementos-->
+    <section class="my-3"><!--cria uma seção genérica, geralmente utilizada como título. Nesse caso tem como objetivo de fazer um conjunto semelhante a uma div e começa da linha 50 e termina na linha 124. -->
+
+      <!-- Grid -->
+      <div class="container">
+
+        <!-- Botão do modal da linha 56 até a 58 -->
+        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          +
+        </button>
+
+        <!-- Modal do botão da linha superior e esse modal vai da linha 61 até a 113 -->
+        <div class="modal fade" data-bs-keyboard="false" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Adicionar Item</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+
+                <h1>Conteúdo do modal</h1>
+
+                <!-- "Formulário" que começa na linha 73 até a 107-->
+                <form id="foodForm"><!--cria um formulário vazio inicialmente-->
+                  <div class="mb-3">
+                    <!-- "Nome" que começa na linha 76 até a 79-->
+                    <label for="nome" class="form-label">Nome</label><!--Serve para criar uma legenda no item e serve também para entiqueta outro elemento que no caso foi usado no input-->
+                    <input type="text" name="nome" id="nome" class="form-control"><!--O input cria um campo onde o cliente pode interagir com ele. Tendo atributos específicos do input no type como text, file, checkbox e etc podendo ter também name e id -->
+                    <div id="nomeHelp" class="form-text">Adicione o nome do Alimento.</div>
+                  </div>
+
+                  <!-- "Descrição" que começa na linha 82 até a 85-->
+                  <div class="mb-3">
+                    <label for="descricao" class="form-label">Descrição</label>
+                    <input type="text" name="descricao" id="descricao" class="form-control">
+                  </div>
+
+                  <!-- "Preço" que começa na linha 88 até a 91-->
+                  <div class="mb-3">
+                    <label for="preco" class="form-label">Preço</label>
+                    <input type="text" name="preco" id="preco" class="form-control">
+                  </div>
+
+                  <!-- "Imagem" que começa na linha 94 até a 97-->
+                  <div class="mb-3">
+                    <label for="imagem" class="form-label">Imagem</label>
+                    <input type="text" name="imagem" id="imagem" class="form-control">
+                  </div>
+                  <!--Botão de fechar o Modal que começa na linha 99 até a 101-->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+
+                    <!--Botão de adicionar que começa na linha 104 até a 106-->
+                    <!-- <input type="submit" value="Adicionar"> -->
+                    <button type="submit" class="btn btn-primary" id="adicionarFoodButton">
+                      Adicionar
+                    </button>
+                  </div>
+                </form>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Linha -->
+        <div id="itens-cardapio" class="row">
+
+          <!-- Colunas-->
+
+          <!-- beforeend -->
+        </div>
+
+    </section>
+
+  </main>
+  <footer></footer>
+
+  <!-- Cardápio -->
+  <script src="./js/cardapio.js" type="module"></script>
+
+  <!-- Bootstrap - Js -->
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
