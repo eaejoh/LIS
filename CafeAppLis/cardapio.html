@@ -1,106 +1,135 @@
-<!DOCTYPE html><!--Diz que o tipo do documento é html-->
-<html><!--É o arquivo html em si-->
+<!DOCTYPE html><!-- Informa que o documento utilizado é o html:5 -->
+<html><!-- A tag html utilizada para informar a estrutura do site -->
 
-<head><!--É onde fica as "configurações" da página html-->
-  <meta charset="UTF-8"><!--faz com que aceite qualquer caracter diferente-->
-  <title>Cardápio</title><!--Título da página-->
+<head><!-- Cabeçalho da página para configurações dentro da página -->
+  <meta charset="UTF-8"><!-- Tag utilizado sobre os caracteres utilizados na página. O padrão utilizado é UTF-8, mas também pode ser utilizado o ISO 8859-1 -->
+
+  <title>Cardápio</title><!-- Título da página que está disponível na aba do navegador -->
 
   <!-- Bootstrap - CSS -->
-  <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"><!--o link serve para "linkar" algum arquvio de fora da máquina ou de dentro da máquina, que é o caso. Nesse link que ele estar puxando é o css do Bootstrap. E o href é o caminho para fazer o link -->
+  <!-- A tag serve para a importação do bootstrap 5, via CND. 
+       A través dele é possível adquerir a aplicação do CSS. 
+       Entretanto, não é necessário o uso de um CSS em algum diretório. -->
+  <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
 
-<body><!--É onde fica as informações "visíveis" ao cliente-->
-  <header><!--Aqui é o cabeçalho da página geralmente é usado para criar menu inicial, barra de pesquisa e etc-->
-    
+<body><!-- "Corpo" da página (Estrutura que se encontra dentro da página). -->
+
+  <header><!-- Cabeçalho da página usado como conteúdo principal (Questão de semântica para separar os elementos). Com ele que é possível ser interpretado por navegadores como cabeçalho da página. -->  
+
     <!-- Toolbar -->
 
-    <!--O <nav> que começa da linha 19 e termina na linha 44 tem o objetivo de criar um "Menu inicial"-->
-    
-      <nav class="navbar navbar-expand-lg navbar-dark bg-primary"><!--Serve para representar uma página e que vai direcionar para outras páginas.E o class serve para criar uma classe de elementos que pode ser de 1 ou mais elemento e esse class do arquivo cardapio.html estão atribuido com Bootstrap exceto um indicado como navbar-brand -->
-      
-      <div class="container-fluid"><!--cria uma "caixa vazia" que se pode colocar elementos dentro delas-->
-        <a class="navbar-brand" href="#"><!--O elemento <a> ele cria um link clicável para o cliente na página html. Esse class em específiconão não é utilizado no Boostrap mas esta sendo usado na pasta css no arquivo index.css-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
           Coffee
-          <small>Arábica</small><!--deixa a letra pequena-->
+          <!-- A <small> tag define um texto em tamanho menor. -->
+          <small>Arábica</small>
         </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><!--cria um botão e este botão esta com uma série de atribuições do Bootstrap-->
-          <span class="navbar-toggler-icon"></span><!--É um conteiner generico em linha normalmente utilizado para dar class, id, atributos e etc-->
+        <!-- A tag button serve para fazer a modificação dos menus de navegação. -->
+        <!-- navbar-toggler: Usar como plugin collapse (Alterna a visibilidade do conteúdo no projeto em algumas classes e nos plugins JavaScript) e outros comportamentos. -->
+        <!-- data-bs-toggle: Em geral, é recomendado usar um botão com o data-bs-target atributo. Embora não seja recomendado do ponto de vista semântico, pode-se usar um link com o href atributo (e um role="button"). Em ambos os casos, o data-bs-toggle="collapse" é necessário. -->
+        <!-- aria-expanded: Esse atributo transmite explicitamente o estado atual do elemento desmontável vinculado ao controle para leitores de tela e tecnologias assistivas semelhantes. Se o elemento recolhível for fechado por padrão, o atributo no elemento de controle deverá ter um valor de aria-expanded="false". -->
+        <!-- Se o elemento de controle tem como alvo um único elemento recolhível – ou seja, o data-bs-target atributo está apontando para um id seletor – deve adicionar o aria-controls atributo ao elemento de controle, contendo o id do elemento recolhível. -->
+        <!-- O atributo aria-label é usado para definir uma string na tag do elemento atual. -->
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarNav"><!--id são usado para da uma característica especifica para algum elemento devendo ser usado apenas em um elemento-->
-          <ul class="navbar-nav"><!--Cria uma lista desordenada-->
-            <li class="nav-item"><!--Cria os elementows da lista-->
-              <a class="nav-link" href="./index.html">Home</a>
+        <!-- A tag <div> serve para agrupar todos elementos que fazem parte do menu. -->
+        <!-- collapse: Alterna a visibilidade do conteúdo no projeto em algumas classes e nos plugins JavaScript. -->
+        <!-- O navbar-collapse refere-se ao menu que está na visualização móvel com a navbar contém links e conteúdo amigável. -->
+        <!-- O elemento de divisão HTML <div> é um container genérico para conteúdo de fluxo, que de certa forma não representa nada. Utilizado para fins de estilos. -->
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav"><!-- Criação de uma lista não ordenada para responsividade e aplicada através do bootstrap a estilização. -->
+            <li class="nav-item"><!-- Item da lista desordenada com classificação nav-item para estilização. -->
+              <a class="nav-link" href="./index.html">Home</a><!-- Linkar o item após selecionado para outro diretório html com caminho ./index.html com o nome "Home" na página. -->
+            </li>
+            <li class="nav-item"><!-- Item da lista não ordenada com classificação nav-item para estilização. -->
+              <a class="nav-link active" aria-current="page" href="#">Cardápio</a><!-- Estiliza o Link por meio de um seletor active com nome Cardápio direcionado para a página atual utilizando aria-current. -->
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Cardápio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Sobre</a>
-            </li>
-          </ul>
+              <!-- Item da lista não ordenada com classificação nav-item para estilização. -->
+              <a class="nav-link" href="#">Sobre</a><!-- Tag <a> utilizada para link, mas não foi colocado nenhum endereçamento para ser encaminhado. Porém foi utilizada uma classe para estilização do link. -->
+            </li> <!-- Fechamento do item tag <li> -->
+          </ul><!-- Fechamento da tag <ul> lista não ordenada -->
         </div>
       </div>
     </nav>
 
   </header>
-  <main><!--Esse é o corpo da página html onde coloca a maioria dos elementos-->
-    <section class="my-3"><!--cria uma seção genérica, geralmente utilizada como título. Nesse caso tem como objetivo de fazer um conjunto semelhante a uma div e começa da linha 50 e termina na linha 124. -->
+  <!-- Fechamento do cabeçalho da página usado como conteúdo principal (Questão de semântica para separar os elementos). --> 
+  <main>
+     <!-- Seções de navegações na página, nesse caso composta por div e botões. -->
+    <section class="my-3">
 
       <!-- Grid -->
       <div class="container">
-
-        <!-- Botão do modal da linha 56 até a 58 -->
+        <!--Botão com aplicação modal no bootstrap -->
+        <!-- Button trigger modal -->
         <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
           +
         </button>
+         <!-- Início do plugin modal, que é uma caixa de diálogo que se apresenta na página, nesse caso,
+        será ativado por um botão que irá executar ações de adicionar item no cardápio. -->
 
-        <!-- Modal do botão da linha superior e esse modal vai da linha 61 até a 113 -->
+        <!-- Modal -->
+         <!-- Container de modal para adicionar item no cardápio. -->
         <div class="modal fade" data-bs-keyboard="false" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Adicionar Item</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <!-- Tag div com class modal fade executa um efeito de transição trazendo foco para ele, estando relacionado a abertura do modal. -->
+
+          <div class="modal-dialog"><!-- A div irá agrupar e definir a largura e margem adequada do modal. -->
+            <div class="modal-content"> <!-- A tag div com class modal-content colocará o estilo ao modal(borda,cor de fundo, etc.) -->
+              <div class="modal-header"><!-- A classe é usada para definir o estilo do cabeçalho do modal. Estiliza o botão de fechamento e estiliza ao cabeçalho com altura de linha adequada. -->
+
+                <h5 class="modal-title" id="exampleModalLabel">Adicionar Item</h5><!-- Responsável pelo título do modal utilizando a tag h5. -->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button><!-- Botão de fechar o modal com javascript  utilizando o data-bs-dismiss. -->
+
               </div>
               <div class="modal-body">
 
                 <h1>Conteúdo do modal</h1>
 
-                <!-- "Formulário" que começa na linha 73 até a 107-->
-                <form id="foodForm"><!--cria um formulário vazio inicialmente-->
-                  <div class="mb-3">
-                    <!-- "Nome" que começa na linha 76 até a 79-->
-                    <label for="nome" class="form-label">Nome</label><!--Serve para criar uma legenda no item e serve também para entiqueta outro elemento que no caso foi usado no input-->
-                    <input type="text" name="nome" id="nome" class="form-control"><!--O input cria um campo onde o cliente pode interagir com ele. Tendo atributos específicos do input no type como text, file, checkbox e etc podendo ter também name e id -->
-                    <div id="nomeHelp" class="form-text">Adicione o nome do Alimento.</div>
+                <!-- Formulário -->
+                <!-- Formulário para inserir os itens desejados. -->
+                <form id="foodForm"><!-- Cadastro do formulário que se encontra dentro do modal. -->
+                  <div class="mb-3"><!-- tag div para agrupar os elementos e ajustar a posicionamento dos elementos. -->
+                    <!-- Nome -->
+                    <label for="nome" class="form-label">Nome</label><!-- A tag label está relacionado ao componente que separa o conteúdo colocado acima do campo de preenchimento do input, mas dentro de um mesmo invólucro. -->
+                    <input type="text" name="nome" id="nome" class="form-control"><!-- tag input responsável pelo preenchimento dos dados para fazer o envio do formulário. -->
+                    <div id="nomeHelp" class="form-text">Adicione o nome do Alimento.</div><!-- Tag responsável para o usuário informar no campo. Utilizado-se como ajuda(help) para o preenchimento. -->
+
                   </div>
 
-                  <!-- "Descrição" que começa na linha 82 até a 85-->
-                  <div class="mb-3">
-                    <label for="descricao" class="form-label">Descrição</label>
-                    <input type="text" name="descricao" id="descricao" class="form-control">
+                  <!-- Descrição -->
+                  <div class="mb-3"><!-- div para agrupar os elementos e ajustar a posicionamento dos elementos. -->
+                    <label for="descricao" class="form-label">Descrição</label><!-- A tag label está relacionado ao componente que separa o conteúdo colocado acima do campo de preenchimento do input, mas dentro de um mesmo invólucro. -->
+                    <input type="text" name="descricao" id="descricao" class="form-control"><!-- tag input responsável pelo preenchimento dos dados para fazer o envio do formulário. -->
                   </div>
 
-                  <!-- "Preço" que começa na linha 88 até a 91-->
-                  <div class="mb-3">
-                    <label for="preco" class="form-label">Preço</label>
-                    <input type="text" name="preco" id="preco" class="form-control">
+                  <!-- Preço -->
+                  <div class="mb-3"><!-- div para agrupar os elementos e ajustar a posicionamento dos elementos. -->
+                    <label for="preco" class="form-label">Preço</label><!-- A tag label está relacionado ao componente que separa o conteúdo colocado acima do campo de preenchimento do input, mas dentro de um mesmo invólucro. -->
+                    <input type="text" name="preco" id="preco" class="form-control"><!-- tag input responsável pelo preenchimento dos dados para fazer o envio do formulário. -->
                   </div>
 
-                  <!-- "Imagem" que começa na linha 94 até a 97-->
-                  <div class="mb-3">
-                    <label for="imagem" class="form-label">Imagem</label>
-                    <input type="text" name="imagem" id="imagem" class="form-control">
+                  <!-- Imagem -->
+                  <div class="mb-3"><!-- div para agrupar os elementos e ajustar a posicionamento dos elementos. -->
+                    <label for="imagem" class="form-label">Imagem</label><!-- A tag label está relacionado ao componente que separa o conteúdo colocado acima do campo de preenchimento do input, mas dentro de um mesmo invólucro. -->
+                    <input type="text" name="imagem" id="imagem" class="form-control"><!-- tag input responsável pelo preenchimento dos dados para fazer o envio do formulário. -->
                   </div>
-                  <!--Botão de fechar o Modal que começa na linha 99 até a 101-->
-                  <div class="modal-footer">
+
+                  <div class="modal-footer"><!-- Tag div relacionado ao rodapé do formulário que está direcionado a posição dos elementos do botão "adiconar" e e "fechar". -->
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                     <!-- Botão de fechar o modal. Tem a mesma função header modal do formulário. -->
 
-                    <!--Botão de adicionar que começa na linha 104 até a 106-->
                     <!-- <input type="submit" value="Adicionar"> -->
+
+                    <!-- Botão que submete um novo item do formulário com id (adicionar). -->
                     <button type="submit" class="btn btn-primary" id="adicionarFoodButton">
                       Adicionar
                     </button>
@@ -115,6 +144,7 @@
 
         <!-- Linha -->
         <div id="itens-cardapio" class="row">
+        <!-- Essa tag <div> faz a listagem do cardápio mostrados na tela -->
 
           <!-- Colunas-->
 
@@ -127,8 +157,12 @@
   <footer></footer>
 
   <!-- Cardápio -->
+
+  <!-- Tag script src: Faz a conexão com o diretório (cardapio.js) que existe na pasta (js) -->
   <script src="./js/cardapio.js" type="module"></script>
 
   <!-- Bootstrap - Js -->
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
+</html>

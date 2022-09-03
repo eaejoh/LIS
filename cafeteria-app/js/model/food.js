@@ -1,17 +1,9 @@
-/**
- * Carregar os itens de food do dataset para o LocalStorage.
- * @param {*} newFoods
- */
 function load(newFoods) {
-  localStorage.setItem('foods-app:foods', JSON.stringify(newFoods));
+  localStorage.setItem("foods-app:foods", JSON.stringify(newFoods));
 }
 
-/**
- * Ler todos os registros de food.
- * @returns json
- */
 function readAll() {
-  const stringFood = localStorage.getItem('foods-app:foods');
+  const stringFood = localStorage.getItem("foods-app:foods");
   return JSON.parse(stringFood);
 }
 
@@ -25,11 +17,6 @@ function nextId() {
   return maxId + 1;
 }
 
-/**
- * Criar um novo registro de food.
- * @param {*} food
- * @returns food
- */
 function create(food) {
   let id = nextId();
 
